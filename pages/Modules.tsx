@@ -442,7 +442,7 @@ export const ArtikelModule: React.FC = () => {
 
                         <div className="h-52 bg-gray-50 rounded-[2.5rem] mb-6 overflow-hidden border border-gray-50 relative shadow-inner">
                             {item.gambar ? (
-                                <img src={`http://ddp_api.test/storage/${item.gambar}`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" alt="Cover" />
+                                <img src={item.gambar_url} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" alt="Cover" />
                             ) : (
                                 <div className="flex items-center justify-center h-full text-gray-300"><ImageIcon size={48} /></div>
                             )}
@@ -659,7 +659,7 @@ export const MonografiModule: React.FC = () => {
                         {/* Cover Image (Portrait) */}
                         <div className="aspect-[3/4] bg-gray-50 rounded-[2.5rem] overflow-hidden mb-6 relative shadow-inner border border-gray-50">
                             {item.gambar ? (
-                                <img src={`http://ddp_api.test/storage/${item.gambar}`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2000ms]" />
+                                <img src={item.gambar_url} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2000ms]" />
                             ) : (
                                 <div className="flex items-center justify-center h-full text-gray-200"><Book size={60} /></div>
                             )}
@@ -890,7 +890,7 @@ export const InfografisModule: React.FC = () => {
                         <div className="aspect-[4/3] bg-gray-50 rounded-[2rem] mb-6 flex items-center justify-center overflow-hidden border border-gray-100 relative shadow-inner">
                             {item.gambar && item.gambar.length > 0 ? (
                                 <img 
-                                    src={`http://ddp_api.test/storage/${item.gambar[0]}`} 
+                                    src={Array.isArray(item.gambar_url) ? item.gambar_url[0] : item.gambar_url} 
                                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
                                     alt="Cover" 
                                 />
@@ -1093,7 +1093,7 @@ export const BukuModule: React.FC = () => {
                         
                         {/* Area Sampul (Locked Aspect Ratio) */}
                         <div className="aspect-[3/4] bg-gray-50 rounded-[2.5rem] overflow-hidden mb-6 relative border border-gray-50 shadow-inner shrink-0">
-                            <img src={`http://ddp_api.test/storage/${item.gambar}`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2000ms]" alt="Cover" />
+                            <img src={item.gambar_url} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2000ms]" alt="Cover" />
                             
                             {/* Overlay Aksi */}
                             <div className="absolute inset-0 bg-[#111827]/60 opacity-0 group-hover:opacity-100 transition-all duration-500 backdrop-blur-[2px] flex items-center justify-center gap-4">
@@ -1290,7 +1290,7 @@ export const JurnalModule: React.FC = () => {
                     <div key={item.id} className="bg-white rounded-[3rem] border border-gray-100 p-6 shadow-sm hover:shadow-xl transition-all duration-500 group relative">
                         <div className="flex gap-6">
                             <div className="w-28 h-36 bg-gray-50 rounded-[2rem] overflow-hidden flex-shrink-0 shadow-inner border border-gray-50 relative">
-                                <img src={`http://ddp_api.test/storage/${item.gambar}`} className="w-full h-full object-cover group-hover:scale-110 transition-all duration-1000" />
+                                <img src={item.gambar_url} className="w-full h-full object-cover group-hover:scale-110 transition-all duration-1000" />
                                 <div className="absolute inset-0 bg-[#111827]/40 opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center">
                                     <FileText size={20} className="text-white" />
                                 </div>
@@ -1424,7 +1424,7 @@ export const MitraModule: React.FC = () => {
                 {data.map(item => (
                     <div key={item.id} className="bg-white border rounded-2xl p-6 flex flex-col items-center shadow-sm hover:shadow-md transition-all group relative border-gray-100">
                         <div className="h-20 w-full flex items-center justify-center mb-4">
-                            <img src={`http://ddp_api.test/storage/${item.gambar}`} className="max-h-full grayscale group-hover:grayscale-0 transition-all duration-500" alt={item.nama_mitra} />
+                            <img src={item.gambar_url} className="max-h-full grayscale group-hover:grayscale-0 transition-all duration-500" alt={item.nama_mitra} />
                         </div>
                         <span className="text-[10px] font-black uppercase text-center text-gray-400 tracking-tighter mb-1 h-8 line-clamp-2">{item.nama_mitra}</span>
                         {/* Label Kategori Kecil */}
@@ -1572,7 +1572,7 @@ export const TestimoniModule: React.FC = () => {
                         <div className="flex items-center justify-between">
                             <div className="flex items-center gap-4">
                                 <div className="w-14 h-14 rounded-2xl overflow-hidden bg-gray-50 border border-gray-100">
-                                    {item.gambar && <img src={`http://ddp_api.test/storage/${item.gambar}`} className="w-full h-full object-cover" />}
+                                    {item.gambar && <img src={item.gambar_url} className="w-full h-full object-cover" />}
                                 </div>
                                 <div>
                                     <h4 className="font-bold text-sm text-[#111827]">{item.nama}</h4>
@@ -1726,7 +1726,7 @@ export const GaleriModule: React.FC = () => {
                         {/* Image Container */}
                         <div className="aspect-[4/5] bg-gray-50 rounded-[2.5rem] overflow-hidden relative shadow-inner">
                             <img 
-                                src={`http://ddp_api.test/storage/${item.gambar}`} 
+                                src={item.gambar_url}
                                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[1500ms]" 
                                 alt={item.nama_kegiatan}
                             />
