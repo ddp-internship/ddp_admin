@@ -890,7 +890,7 @@ export const InfografisModule: React.FC = () => {
                         <div className="aspect-[4/3] bg-gray-50 rounded-[2rem] mb-6 flex items-center justify-center overflow-hidden border border-gray-100 relative shadow-inner">
                             {item.gambar && item.gambar.length > 0 ? (
                                 <img 
-                                    src={Array.isArray(item.gambar_url) ? item.gambar_url[0] : item.gambar_url} 
+                                    src={Array.isArray(item.gambar_urls) ? item.gambar_urls[0] : item.gambar_urls} 
                                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
                                     alt="Cover" 
                                 />
