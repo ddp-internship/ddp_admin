@@ -621,7 +621,7 @@ export const MonografiModule: React.FC = () => {
     const openEdit = (item: any) => {
         // Saat edit, kita ambil datanya tapi gambar string lama jangan dimasukkan ke input file
         setFormData({ ...item, gambar: null });
-        setPreview(`http://ddp_api.test/storage/${item.gambar}`);
+        setPreview(null);
         setIsModalOpen(true);
     };
 
@@ -1066,7 +1066,7 @@ export const BukuModule: React.FC = () => {
 
     const openEdit = (item: any) => {
         setFormData({ ...item, gambar: null });
-        setPreview(`http://ddp_api.test/storage/${item.gambar}`);
+        setPreview(null);
         setIsModalOpen(true);
     };
 
@@ -1264,7 +1264,7 @@ export const JurnalModule: React.FC = () => {
 
     const openEdit = (item: any) => {
         setFormData({ ...item, gambar: null });
-        setPreview(`http://ddp_api.test/storage/${item.gambar}`);
+        setPreview(null);
         setIsModalOpen(true);
     };
 
